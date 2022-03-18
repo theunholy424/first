@@ -21,6 +21,9 @@ let animals = [{
     function setup() {
       createCanvas(600, 600);
       background(200);
+      textSize(32);
+      text("click to randomize",50,50);
+
 
 
     }
@@ -29,8 +32,13 @@ let animals = [{
 
     }
     function mousePressed(){
-      background(random(200,255));
+      if (animals[0]) {
+        background(random(200,255));
       randomIndex = int(random(animals. length));
       text(animals[randomIndex].name, 50, 50);
       animals. splice(randomIndex, 1);
+    } else {
+      background(random(200,255));
+      text("nothing left",50,50);
+    }
     }
