@@ -12,6 +12,7 @@ let nameInputs = [];
 
 
 
+
 function preload() {
   for (let i = 0; i <= 9; i++) {
     cartoons[i] = loadImage("./assets/cat_" + i + ".png")
@@ -22,9 +23,9 @@ function preload() {
 function setup() {
   cnv = createCanvas(600, 600);
   cnv.parent("#canvasDiv");
-  background(170,30,30);
+  background(120,10,10);
   textSize(36);
-  textFont(`Courier new`);
+  //textFont(`Courier new`);
   textAlign(CENTER);
   textStyle(BOLD);
   imageMode(CENTER);
@@ -49,7 +50,7 @@ function draw() {
 
   if (animating == true) {
     clear();
-    image(cartoons[imageCounter], width /2, height /2);
+    image(cartoons[imageCounter], width/2, height/2);
     if (imageCounter < cartoons.length - 1) {
       imageCounter++;
     } else {
@@ -74,6 +75,7 @@ function randomizer() {
     text("nothing left", width/2, height/2);
   }
 }
+
 
 function changeBackground() {
   if (counter <= 5) {
